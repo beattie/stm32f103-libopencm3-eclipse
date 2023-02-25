@@ -5,6 +5,6 @@ Install libopencm3 in /opt:
 
   $ git clone https://github.com/libopencm3/libopencm3.git /opt/libopencm3
   
-  $ cd /opt/lib/opencm3
+  $ cd /opt/libopencm3
   
   $ make
