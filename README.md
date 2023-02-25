@@ -1,7 +1,7 @@
 # stm32f103-libopencm3-eclipse
-Resurecting and old project that was not working, updated and tested with Eclipse 2022-12.
+Resurecting and old project that was not working. Projects target bluepill boards. Updated and tested with Eclipse 2022-12.
 
-A bare bones libopencm3 eclipse project for the bluepill stm32f103c8 from maple mini source. Should work for any stm32f103
+A bare bones libopencm3 eclipse projects for the bluepill stm32f103c8 from maple mini sources. Should work for any stm32f103 with some modification.
 
 Install libopencm3 in /opt:
 
@@ -10,6 +10,11 @@ Install libopencm3 in /opt:
   $ cd /opt/libopencm3
   
   $ make
+
+## Projects
+* miniblink - blink an LED using a delat loop.
+* systick - Using the systick timer blink an LED 1Hz
+* usb-cdc - Instansiate a USB CDC device
 
 ---
 ## Setup Debugging with Blackmagic Probe
