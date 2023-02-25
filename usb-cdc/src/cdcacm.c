@@ -242,7 +242,7 @@ int main(void)
 
 	rcc_clock_setup_pll(&rcc_hse_configs[RCC_CLOCK_HSE8_72MHZ]);
 
-	rcc_periph_clock_enable(RCC_GPIOA);
+	/*rcc_periph_clock_enable(RCC_GPIOA);*/
 	rcc_periph_clock_enable(RCC_GPIOC);
 
 	/* Setup GPIOC Pin 12 to pull up the D+ high, so autodect works
@@ -251,17 +251,17 @@ int main(void)
 		      GPIO_CNF_OUTPUT_OPENDRAIN, GPIO12);
 	gpio_clear(GPIOC, GPIO12);
 
-	/* Setup GPIOA Pin 5 for the LED */
-	gpio_set(GPIOA, GPIO5);
-	gpio_set_mode(GPIOA, GPIO_MODE_OUTPUT_2_MHZ,
-		      GPIO_CNF_OUTPUT_PUSHPULL, GPIO5);
+	/* Setup GPIOC Pin 13 for the LED */
+	gpio_set(GPIOC, GPIO13);
+	gpio_set_mode(GPIOC, GPIO_MODE_OUTPUT_2_MHZ,
+		      GPIO_CNF_OUTPUT_PUSHPULL, GPIO13);
 
 	usbd_dev = usbd_init(&st_usbfs_v1_usb_driver, &dev, &config, usb_strings, 3, usbd_control_buffer, sizeof(usbd_control_buffer));
 	usbd_register_set_config_callback(usbd_dev, cdcacm_set_config);
 
 	for (i = 0; i < 0x800000; i++)
 		__asm__("nop");
-	gpio_clear(GPIOA, GPIO5);
+	gpio_clear(GPIOC, GPIO13);
 
 	while (1)
 		usbd_poll(usbd_dev);
