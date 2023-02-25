@@ -24,10 +24,10 @@ Build project (so the executable will be found)
 Run -> Debug Configurations -> GDB Hardware Debugging (double click) -> Debugger (arm-none-eabi-gdb)  (uncheck _Use remote target_) -> Startup -> After Halt checkbox
 
 ```
-   set mem inaccessible-by-default off
-   target extended-remote /dev/ttyBmpGdb
-   monitor swdp_scan
-   attach 1
+set mem inaccessible-by-default off
+target extended-remote /dev/ttyBmpGdb
+monitor swdp_scan
+attach 1
 ```
 
 After Set breakpoint at
