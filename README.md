@@ -13,8 +13,9 @@ Install libopencm3 in /opt:
 
 ---
 ## Setup Debugging with Blackmagic Probe
-I have a couple of Black Pill boards flashed with the Black Magic Probe software that I use for debugging. The following steps should not be needed.
+I have a couple of Black Pill boards flashed with the Black Magic Probe software that I use for debugging.
   
+Build project (so the executable will be found)  
 Run -> Debug Configurations -> GDB Hardware Debugging (double click) -> Debugger (arm-none-eabi-gdb)  (uncheck _Use remote target_) -> Startup -> After Halt checkbox
 
 ```
