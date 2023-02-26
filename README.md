@@ -37,3 +37,12 @@ After Set breakpoint at
 ```
 
 Apply
+
+### Command line flash with BMP
+```
+arm-none-eabi-gdb <file>.elf
+target extended_remote /dev/ttyACM0
+monitor swdp_scan
+attach 1
+load
+```
